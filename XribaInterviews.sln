@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XribaInterviews", "XribaInterviews\XribaInterviews.csproj", "{40EF07B4-D873-4095-833D-E8CCF2229594}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40EF07B4-D873-4095-833D-E8CCF2229594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40EF07B4-D873-4095-833D-E8CCF2229594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40EF07B4-D873-4095-833D-E8CCF2229594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40EF07B4-D873-4095-833D-E8CCF2229594}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85968727-3843-4821-A3FB-3FF35476E613}
+	EndGlobalSection
+EndGlobal
