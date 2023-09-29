@@ -3,6 +3,13 @@
     public interface INumberChallenge
     {
         /// <summary>
+        /// Retrive the input numbers without duplicate
+        /// </summary>
+        /// <param name="values">values to elaborate</param>
+        /// <returns>only unique values, with duplicates, ordered by ascending</returns>
+        IEnumerable<int> GetUniqueValues(IEnumerable<int> values);
+
+        /// <summary>
         /// Get digits from number
         /// </summary>
         /// <param name="number">the number</param>

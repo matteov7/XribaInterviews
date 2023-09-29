@@ -3,6 +3,17 @@ namespace XribaInterviews
     public class NumberChallengeTests
     {
         [Theory]
+        [InlineData(new int[] { 1, 5, 2, 2, 3, 4, 5, 1, 3, 5 }, new int[] { 1, 2, 3, 4, 5 })]
+        [InlineData(new int[] { 3, 2, 1 }, new int[] { 1, 2, 3 })]
+        [InlineData(new int[0], new int[0])]
+        public void GetUniqueValues_Test(IEnumerable<int> values, IEnumerable<int> expectedResult)
+        {
+            INumberChallenge th = GetInstance();
+            var result = th.GetUniqueValues(values);
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
         [InlineData(12345, new short[] { 1, 2, 3, 4, 5 })]
         [InlineData(12, new short[] { 1, 2 })]
         [InlineData(0, new short[] { 0 })]
