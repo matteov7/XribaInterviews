@@ -36,12 +36,17 @@ namespace XribaInterviews
         }
 
         [Theory]
+        [InlineData(2, true)]
         [InlineData(3, true)]
+        [InlineData(5, true)]
+        [InlineData(7, true)]
         [InlineData(19, true)]
         [InlineData(89, true)]
         [InlineData(389, true)]
         [InlineData(1789, true)]
         [InlineData(2357, true)]
+
+        [InlineData(1, false)]
         [InlineData(6, false)]
         [InlineData(18, false)]
         [InlineData(390, false)]
@@ -54,7 +59,15 @@ namespace XribaInterviews
         }
 
         [Theory]
-        [InlineData(3, false)]
+        [InlineData(1, false)]
+        [InlineData(2, true)]
+        [InlineData(3, true)]
+        [InlineData(5, true)]
+        [InlineData(7, true)]
+        [InlineData(23, true)]
+        [InlineData(37, true)]
+        [InlineData(2357, true)]
+
         [InlineData(19, false)]
         [InlineData(89, false)]
         [InlineData(389, false)]
@@ -63,7 +76,6 @@ namespace XribaInterviews
         [InlineData(18, false)]
         [InlineData(390, false)]
         [InlineData(2000, false)]
-        [InlineData(2357, true)]
         public void IsPrimeDigitPrime_Test(ulong number, bool expectedResult)
         {
             INumberChallenge th = GetInstance();

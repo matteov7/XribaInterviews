@@ -32,6 +32,7 @@
 
         /// <summary>
         /// Check if the number is a prime number that has only the prime digits (2, 3, 5, or 7)
+        /// https://oeis.org/A019546
         /// </summary>
         /// <param name="number">number to check</param>
         /// <returns>true if the number is prime, 0 otherwise</returns>
