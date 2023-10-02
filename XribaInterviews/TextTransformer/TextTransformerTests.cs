@@ -42,6 +42,24 @@ namespace XribaInterviews
             Assert.Equal(expectedResult, result);
         }
 
+        [Theory]
+        [InlineData(" ", true)]
+        [InlineData("", true)]
+        [InlineData(null, true)]
+        [InlineData("{{}}", true)]
+        [InlineData("{}", true)]
+        [InlineData("{}{}", true)]
+        [InlineData("{}}", false)]
+        [InlineData("{{{}}", false)]
+        [InlineData("}{", false)]
+        [InlineData("{}}{", false)]
+        public void AreBalancedCurlyBrackets_Test(string? expression, bool expectedResult)
+        {
+            ITextChallenge th = GetInstance();
+            var result = th.AreBalancedCurlyBrackets(expression);
+            Assert.Equal(expectedResult, result);
+        }
+
         private ITextChallenge GetInstance()
         {
             throw new NotImplementedException();

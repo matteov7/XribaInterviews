@@ -30,5 +30,12 @@
         /// <param name="email">email to offuscate</param>
         /// <returns>email offuscated</returns>
         string MaskEmail(string email);
+
+        /// <summary>
+        /// Check if the expression has balanced curly brackets
+        /// </summary>
+        /// <param name="expression">expression to check</param>
+        /// <returns>true if the expression have balanced curly brackets, false otherwise</returns>
+        bool AreBalancedCurlyBrackets(string expression);
     }
 }
