@@ -102,8 +102,6 @@ public partial class NorthwindContext : DbContext
 
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasIndex(e => e.CategoryName, "Categories_CategoryName").IsDescending();
-
             entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
             entity.Property(e => e.CategoryName).HasColumnType("NVARCHAR(15)");
         });
@@ -129,14 +127,6 @@ public partial class NorthwindContext : DbContext
 
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasIndex(e => e.City, "Customers_City").IsDescending();
-
-            entity.HasIndex(e => e.CompanyName, "Customers_CompanyName").IsDescending();
-
-            entity.HasIndex(e => e.PostalCode, "Customers_PostalCode").IsDescending();
-
-            entity.HasIndex(e => e.Region, "Customers_Region").IsDescending();
-
             entity.Property(e => e.CustomerId)
                 .HasColumnType("CHAR(5)")
                 .HasColumnName("CustomerID");
@@ -195,10 +185,6 @@ public partial class NorthwindContext : DbContext
 
         modelBuilder.Entity<Employee>(entity =>
         {
-            entity.HasIndex(e => e.LastName, "Employees_LastName").IsDescending();
-
-            entity.HasIndex(e => e.PostalCode, "Employees_PostalCode").IsDescending();
-
             entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
             entity.Property(e => e.Address).HasColumnType("NVARCHAR(60)");
             entity.Property(e => e.BirthDate).HasColumnType("DATETIME");
@@ -288,22 +274,6 @@ public partial class NorthwindContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasIndex(e => e.CustomerId, "Orders_CustomerID").IsDescending();
-
-            entity.HasIndex(e => e.CustomerId, "Orders_CustomersOrders").IsDescending();
-
-            entity.HasIndex(e => e.EmployeeId, "Orders_EmployeeID").IsDescending();
-
-            entity.HasIndex(e => e.EmployeeId, "Orders_EmployeesOrders").IsDescending();
-
-            entity.HasIndex(e => e.OrderDate, "Orders_OrderDate").IsDescending();
-
-            entity.HasIndex(e => e.ShipPostalCode, "Orders_ShipPostalCode").IsDescending();
-
-            entity.HasIndex(e => e.ShippedDate, "Orders_ShippedDate").IsDescending();
-
-            entity.HasIndex(e => e.ShipVia, "Orders_ShippersOrders").IsDescending();
-
             entity.Property(e => e.OrderId).HasColumnName("OrderID");
             entity.Property(e => e.CustomerId)
                 .HasColumnType("CHAR(5)")
@@ -334,14 +304,6 @@ public partial class NorthwindContext : DbContext
 
         modelBuilder.Entity<OrderDetail>(entity =>
         {
-            entity.HasIndex(e => e.OrderId, "Order_Details_OrderID").IsDescending();
-
-            entity.HasIndex(e => e.OrderId, "Order_Details_OrdersOrder_Details").IsDescending();
-
-            entity.HasIndex(e => e.ProductId, "Order_Details_ProductID").IsDescending();
-
-            entity.HasIndex(e => e.ProductId, "Order_Details_ProductsOrder_Details").IsDescending();
-
             entity.Property(e => e.OrderDetailId).HasColumnName("OrderDetailID");
             entity.Property(e => e.Discount).HasColumnType("REAL ( 24 , 0 )");
             entity.Property(e => e.OrderId)
@@ -427,16 +389,6 @@ public partial class NorthwindContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasIndex(e => e.CategoryId, "Products_CategoriesProducts").IsDescending();
-
-            entity.HasIndex(e => e.CategoryId, "Products_CategoryID").IsDescending();
-
-            entity.HasIndex(e => e.ProductName, "Products_ProductName").IsDescending();
-
-            entity.HasIndex(e => e.SupplierId, "Products_SupplierID").IsDescending();
-
-            entity.HasIndex(e => e.SupplierId, "Products_SuppliersProducts").IsDescending();
-
             entity.Property(e => e.ProductId).HasColumnName("ProductID");
             entity.Property(e => e.CategoryId)
                 .HasColumnType("INT")
@@ -576,10 +528,6 @@ public partial class NorthwindContext : DbContext
 
         modelBuilder.Entity<Supplier>(entity =>
         {
-            entity.HasIndex(e => e.CompanyName, "Suppliers_CompanyName").IsDescending();
-
-            entity.HasIndex(e => e.PostalCode, "Suppliers_PostalCode").IsDescending();
-
             entity.Property(e => e.SupplierId).HasColumnName("SupplierID");
             entity.Property(e => e.Address).HasColumnType("NVARCHAR(60)");
             entity.Property(e => e.City).HasColumnType("NVARCHAR(15)");
